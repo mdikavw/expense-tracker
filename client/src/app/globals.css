@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	--background: #ffffff;
+	--foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--background: #111111;
+		--foreground: #ededed;
+	}
+}
+
+body {
+	color: var(--foreground);
+	background: var(--background);
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+/* For Firefox */
+input[type='number'] {
+	-moz-appearance: textfield;
+}
+
+.form-group {
+	@apply space-y-2 text-foreground;
+}
+
+.form-group label {
+	@apply block;
+}
+
+.form-group input {
+	@apply w-full border border-secondary rounded-md px-4 py-2 bg-background text-foreground placeholder-gray-400 focus:border-primary focus:outline-none;
+}
+
+.auth-form-group {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.auth-form-group label {
+	@apply text-sm;
+}
+
+.auth-form-group input {
+	@apply border border-white border-solid px-4 py-2 rounded-lg bg-transparent;
+}
